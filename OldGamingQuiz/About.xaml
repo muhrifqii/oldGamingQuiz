@@ -1,0 +1,85 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="OldGamingQuiz.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:OldGamingQuiz.ViewModels"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.DataContext>
+            <viewModels:CommandSampleViewModel/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,0,0,20" Orientation="Horizontal" Background="#2C1210">
+            <StackPanel Orientation="Horizontal" Margin="10,20,0,20">
+                <Image Source="/Assets/Tiles/159.png" Width="70"/>
+                <TextBlock x:Name="ApplicationTitle" Text="Old Gaming Quiz" FontSize="48" FontFamily="Segoe WP Semibold" Style="{StaticResource PhoneTextNormalStyle}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock 
+                    Foreground="Black"
+                    Text="v1.0.0.0" 
+                    Margin="12,-12,12,0" 
+                    FontSize="{StaticResource PhoneFontSizeNormal}"/>
+            </StackPanel>
+
+            <TextBlock 
+                Grid.Row="1"
+                Margin="12,24,12,24" 
+                TextWrapping="Wrap" 
+                Foreground="Black" 
+                FontSize="{StaticResource PhoneFontSizeNormal}" >
+            	<Run Text="Have a good day with those old console games? like game in psone, gameboy, and nintendo? Let's try your knowledge about those old school game. With Old Gaming Quiz, bring back the old memories and test how far you know about those old game. The answer you are type in is NOT case sensitive"/>
+            	<LineBreak/>
+            	<Run Text="Pictures from Gamefaqs.com"/>
+            </TextBlock>
+            <HyperlinkButton 
+                Grid.Row="2" 
+                Content="technical support/feedback email" 
+                Margin="0,12,0,0" 
+                HorizontalAlignment="Left" 
+                Foreground="{StaticResource PhoneAccentBrush}" 
+                FontSize="{StaticResource PhoneFontSizeNormal}" 
+                Command="{Binding SendAnEmailCommand}"/>
+            <HyperlinkButton 
+                Grid.Row="3"
+                Content="rate this app" 
+                Margin="0,12,0,0" 
+                HorizontalAlignment="Left" 
+                Foreground="{StaticResource PhoneAccentBrush}" 
+                FontSize="{StaticResource PhoneFontSizeNormal}" 
+                Command="{Binding RateThisAppCommand}"/>
+            <StackPanel Grid.Row="4" Margin="12,0,12,50" VerticalAlignment="Bottom">
+                <TextBlock 
+                    Foreground="Black"
+                    Text="by Muhammad Rifqi Fatchurrahman P D" 
+                    FontSize="{StaticResource PhoneFontSizeNormal}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

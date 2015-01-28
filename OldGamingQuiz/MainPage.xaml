@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="OldGamingQuiz.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,0,0,20" Orientation="Horizontal" Background="#2C1210">
+            <StackPanel Orientation="Horizontal" Margin="10,20,0,20">
+                <Image Source="/Assets/Tiles/159.png" Width="70"/>
+                <TextBlock x:Name="ApplicationTitle" Text="Old Gaming Quiz" FontSize="48" FontFamily="Segoe WP Semibold" Style="{StaticResource PhoneTextNormalStyle}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <StackPanel>
+                <StackPanel Tap="StackPanel_Tap" Background="#DF8527" Margin="0,0,0,20">  
+                    <TextBlock TextWrapping="Wrap" Text="Catch The Game" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20" FontFamily="Segoe WP Semibold"/>
+                </StackPanel>
+                <StackPanel Tap="StackPanel_Tap_1" Background="#D93427" Margin="0,0,0,20">
+                    <TextBlock TextWrapping="Wrap" Text="Catch The Name" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20" FontFamily="Segoe WP Semibold"/>
+                </StackPanel>
+                <StackPanel Tap="StackPanel_Tap_2" Background="#2C1210" Margin="0,0,0,20" Opacity="0.6">
+                    <TextBlock TextWrapping="Wrap" Text="Coming Soon" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20" FontFamily="Segoe WP Semibold"/>
+                </StackPanel>
+                <Button Margin="0,220,0,0" Background="#2C1210" Content="How To Play" Click="Button_Click"/>
+            </StackPanel>
+
+        </Grid>
+        
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#2C1210">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/feature.calendar.png" Text="score" Click="ScoreClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/questionmark.png" Text="about" Click="AboutClick"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
+
